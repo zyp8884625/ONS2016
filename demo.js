@@ -117,8 +117,7 @@ function processCommand() {
             $("#StationToCluster").empty();
             StationToCluster(commandList[i]);
         }
-        /*
-        if (commandList[i].search("ONOS1") >= 0 && 
+        if (commandList[i].search("ONOS") >= 0 && 
             commandList[i].search("Installing") >= 0 &&
             !node1Closed){
                 if(i >= commandList.length-1){
@@ -129,49 +128,7 @@ function processCommand() {
             $("#StationToCluster").empty();
             StationToCluster(commandList[i]);
         }
-        if (commandList[i].search("ONOS1") >= 0 && 
-            commandList[i].search("disconnect onos 1 handle") >= 0){
-            $(".node1imgs").attr("src","onos-logo-gray.png");
-            $(".node1imgs").fadeIn("slow");
-            node1Closed = true;
-        }
         
-        if (commandList[i].search("ONOS2") >= 0 && 
-            commandList[i].search("Installing") >= 0 &&
-            !node2Closed){
-                if(i >= commandList.length-1){
-                    $(".node2imgs").fadeOut("slow");
-                    $(".node2imgs").attr("src","onos-logo-lg.png");
-                    $(".node2imgs").fadeIn("slow");
-                }
-            $("#StationToCluster").empty();
-            StationToCluster(commandList[i]);
-        }
-        if (commandList[i].search("ONOS2") >= 0 && 
-            commandList[i].search("disconnect onos 2 handle") >= 0){
-            $(".node2imgs").attr("src","onos-logo-gray.png");
-            $(".node2imgs").fadeIn("slow");
-            node2Closed = true;
-        }
-        
-        if (commandList[i].search("ONOS3") >= 0 && 
-            commandList[i].search("Installing") >= 0 &&
-            !node3Closed){
-                if(i >= commandList.length-1){
-                    $(".node3imgs").fadeOut("slow");
-                    $(".node3imgs").attr("src","onos-logo-lg.png");
-                    $(".node3imgs").fadeIn("slow");
-                }
-            $("#StationToCluster").empty();
-            StationToCluster(commandList[i]);
-        }
-        if (commandList[i].search("ONOS3") >= 0 && 
-            commandList[i].search("disconnect onos 3 handle") >= 0){
-            $(".node3imgs").attr("src","onos-logo-gray.png");
-            $(".node3imgs").fadeIn("slow");
-            node3Closed = true;
-        }
-        */
         if ( (commandList[i].search("Mininet") >= 0 || commandList[i].search("Quagga") >= 0)&& 
             commandList[i].search("Bringing down links") < 0 &&
             !MiniNetClosed) {
