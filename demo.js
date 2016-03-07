@@ -124,6 +124,12 @@ function processCommand() {
                     $(".node1imgs").fadeOut("slow");
                     $(".node1imgs").attr("src","onos-logo-lg.png");
                     $(".node1imgs").fadeIn("slow");
+                    $(".node2imgs").fadeOut("slow");
+                    $(".node2imgs").attr("src","onos-logo-lg.png");
+                    $(".node2imgs").fadeIn("slow");
+                    $(".node3imgs").fadeOut("slow");
+                    $(".node3imgs").attr("src","onos-logo-lg.png");
+                    $(".node3imgs").fadeIn("slow");
                 }
             $("#StationToCluster").empty();
             StationToCluster(commandList[i]);
@@ -154,51 +160,15 @@ function processCommand() {
             $("#StationToMiniLink").empty();
             testStationToMiniNet(commandList[i]);
         }
+        
         if (commandList[i].search("Mininet") >= 0 && 
             commandList[i].search("Bring back up links") >= 0) {
             $(".TopoImg").attr("src","topo.png");
             $(".TopoImg").fadeIn("slow");
             $("#StationToMiniLink").empty();
             testStationToMiniNet(commandList[i]);
-        }
-        /*
-        if (commandList[i].search("Mininet") >= 0 && 
-            commandList[i].search("starting mininet Topology") >= 0 &&
-            !MiniNetClosed) {
-                $(".TopoImg").attr("src","topo.png");
-                if(i >= commandList.length-1){
-                    $(".TopoImg").fadeOut("slow");
-                    $(".TopoImg").fadeIn("slow");
-                }
-            $("#StationToMiniLink").empty();
-            testStationToMiniNet(commandList[i]);
-         }
-         
-         if (commandList[i].search("Quagga") >= 0 && 
-            commandList[i].search("starting Quagga handle") >= 0 &&
-            !MiniNetClosed) {
-                $(".TopoImg").attr("src","topo.png");
-                if(i >= commandList.length-1){
-                    $(".TopoImg").fadeOut("slow");
-                    $(".TopoImg").fadeIn("slow");
-                }
-            $("#StationToMiniLink").empty();
-            testStationToMiniNet(commandList[i]);
-         }
-         if (commandList[i].search("Quagga") >= 0 && 
-            commandList[i].search("DEMO:Quagga Host:starting Quagga Host") >= 0 &&
-            !MiniNetClosed) {
-                $(".TopoImg").attr("src","topo.png");
-                if(i >= commandList.length-1){
-                    $(".TopoImg").fadeOut("slow");
-                    $(".TopoImg").fadeIn("slow");
-                }
-            $("#StationToMiniLink").empty();
-            testStationToMiniNet(commandList[i]);
-         }
-         
-         */
-         
+        }   
+        
         if (commandList[i].search("Gerrit") >= 0 && 
             commandList[i].search("Pulling") >= 0) {
                 if(i >= commandList.length-1){
@@ -216,8 +186,8 @@ function processCommand() {
                 }
                 $("#JenToWiki").empty();
                 JenToWiki(commandList[i]);
-        }
-    }           
+            }
+    }
 }
 
 function state_Change(){
