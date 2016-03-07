@@ -1,0 +1,174 @@
+body{
+    background-color: gainsboro;
+}
+
+#testTittle{
+    width: 100%;
+    text-align:center;
+    height: 5%;
+    margin-bottom: 2%;
+    font-size: 18px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+#testStation{
+    width: 45%;
+    float: left;
+    text-align:center;
+    height: 47%;
+    border-width: 1px;
+    
+    font-size: 18px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    
+}
+
+#GerrWiki{
+    float: right;
+    width: 28%;
+    height: 60%;
+    border-width: 1px;
+}
+
+#gerrit{
+    float: left;
+    width: 90%;
+    height: 50%;
+    text-align: center;
+}
+
+#wiki{
+    float: left;
+    width: 90%;
+    height: 50%;
+    text-align: center;
+}
+
+.node1imgs{
+    margin-left: 0%;
+    height: 100%;
+    width: 75%;
+}
+.node2imgs{
+    margin-left: 0%;
+    height: 100%;
+    width: 75%;
+}
+.node3imgs{
+    margin-left: 0%;
+    height: 100%;
+    width: 75%;
+}
+.testStationImg{
+    margin-left: 0%;
+}
+
+#node1{
+   float: left;
+   height: 27%;
+   text-align: center;
+   width: 90%;
+   font-size: 14px;
+   border: solid;
+   border-width: 4px;
+   border-color: darkred;
+   border-style: solid;
+   margin: 2.5%;
+   margin-bottom: 1%;
+}
+#node2{
+   float: left;
+   height: 27%;
+   text-align: center;
+   width: 90%;
+   font-size: 14px;
+   border: solid;
+   border-width: 4px;
+   border-color: darkred;
+   border-style: solid;
+   margin: 2.5%;
+   margin-bottom: 1%;
+}
+#node3{
+   float: left;
+   height: 27%;
+   text-align: center;
+   width: 90%;
+   font-size: 14px;
+   border: solid;
+   border-width: 4px;
+   border-color: darkred;
+   border-style: solid;
+   margin: 2.5%;
+   margin-bottom: 1%;
+}
+
+
+#MiniNet{
+   float: left;
+   width: 96%;
+   height: 27%;
+   text-align: center;
+   border-style: double;
+   border-width: 8px;
+}
+
+#Jenkins{
+    float: left;
+    width: 25%;
+    text-align:center;
+    height: 13%;
+    margin-left: 14%;
+    background-color: 6699FF;
+}
+
+
+div.line {  
+    position:absolute;  
+    z-index:2;  
+    width:2px;  
+    height:2px;  
+    font-size:2px;  
+    background-color: ForestGreen;
+    overflow:hidden;
+}  
+
+div.Ami {  
+    position:absolute;  
+    z-index:4;   
+    font-size:14px;  
+    color: mediumblue;
+    background-color: white;
+    overflow:hidden;
+}  
+
+#lines{
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+#testCluster{
+    float: left;
+    width: 23%;
+    text-align: center;
+    height: 59%;
+    border-width: 4px;
+    border-style: solid;
+    border-color: darkred;
+    margin-bottom: 1%;
+}
+
+#MiniNetLogo{
+    width: 100%;
+    height: 20%;
+}
+
+#MiniNetTopo{
+    float: left;
+    height: 80%;
+    width: 100%;
+}
