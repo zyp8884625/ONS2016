@@ -222,7 +222,7 @@ function JenToGerrit(command) {
     var sY = getElemPos(document.getElementsByClassName("JenImg")[0]).y + $(".JenImg").height()/2;
     var sX = getElemPos(document.getElementsByClassName("JenImg")[0]).x + $(".JenImg").width();
     var eY = getElemPos(document.getElementsByClassName("JenImg")[0]).y + $(".JenImg").height()/2;
-    var eX = getElemPos(document.getElementsByClassName("gerritImg")[0]).x;
+    var eX = getElemPos(document.getElementsByClassName("gerritImg")[0]).x - 20;
     $("#JenToGerrit").empty();
     line(sX,sY,eX,eY,document.getElementById('JenToGerrit'));
     if (commandList[commandList.length-1].search(command) >= 0) {
