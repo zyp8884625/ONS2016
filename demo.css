@@ -139,7 +139,7 @@ div.line {
 div.Ami {  
     position:absolute;  
     z-index:4;   
-    font-size:14px;  
+    font-size:20px;  
     color: mediumblue;
     background-color: white;
     overflow:hidden;
