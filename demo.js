@@ -67,7 +67,7 @@ function processCommand() {
             
         }
         
-        if (commandList[i].search("ONOS1") >= 0 && !node1Closed){
+        if (commandList[i].search("ONOS1:") >= 0 && !node1Closed){
                 if(i >= commandList.length-1){
                     $(".node1imgs").fadeOut("slow");
                     $(".node1imgs").attr("src","onos-logo-lg.png");
@@ -77,7 +77,7 @@ function processCommand() {
             StationToCluster(commandList[i]);
         }
         
-        if (commandList[i].search("ONOS2") >= 0 && 
+        if (commandList[i].search("ONOS2:") >= 0 && 
             commandList[i].search("disconnect") < 0 &&
             !node1Closed){
                 if(i >= commandList.length-1){
@@ -89,27 +89,12 @@ function processCommand() {
             StationToCluster(commandList[i]);
         }
         
-        if (commandList[i].search("ONOS3") >= 0 && 
+        if (commandList[i].search("ONOS3:") >= 0 && 
             commandList[i].search("disconnect") < 0 &&
             !node1Closed){
                 if(i >= commandList.length-1){
                     $(".node3imgs").fadeOut("slow");
                     $(".node3imgs").attr("src","onos-logo-lg.png");
-                    $(".node3imgs").fadeIn("slow");
-                }
-            $("#StationToCluster").empty();
-            StationToCluster(commandList[i]);
-        }
-        
-        if (commandList[i].search("ONOS Cluster") >= 0 && 
-            commandList[i].search("disconnect") < 0 &&
-            !node1Closed){
-                if(i >= commandList.length-1){
-                    $(".node1imgs").fadeOut("slow");
-                    $(".node1imgs").fadeIn("slow");
-                    $(".node2imgs").fadeOut("slow");
-                    $(".node2imgs").fadeIn("slow");
-                    $(".node3imgs").fadeOut("slow");
                     $(".node3imgs").fadeIn("slow");
                 }
             $("#StationToCluster").empty();
