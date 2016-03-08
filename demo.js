@@ -76,6 +76,24 @@ function processCommand() {
             $("#StationToCluster").empty();
             StationToCluster(commandList[i]);
         }
+        if (commandList[i].search("ONOS2:") >= 0 && !node1Closed){
+                if(i >= commandList.length-1){
+                    $(".node2imgs").fadeOut("slow");
+                    $(".node2imgs").attr("src","onos-logo-lg.png");
+                    $(".node2imgs").fadeIn("slow");
+                }
+            $("#StationToCluster").empty();
+            StationToCluster(commandList[i]);
+        }
+        if (commandList[i].search("ONOS3:") >= 0 && !node1Closed){
+                if(i >= commandList.length-1){
+                    $(".node3imgs").fadeOut("slow");
+                    $(".node3imgs").attr("src","onos-logo-lg.png");
+                    $(".node3imgs").fadeIn("slow");
+                }
+            $("#StationToCluster").empty();
+            StationToCluster(commandList[i]);
+        }
         
         if (commandList[i].search("ONOS2:") >= 0 && 
             commandList[i].search("disconnect") < 0 &&
