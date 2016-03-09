@@ -270,7 +270,7 @@ function transport(startX, startY, endX, endY, command, container) {
     $(".Ami").animate({marginLeft:endX, marginTop:endY},3000)
  }
 
-var progress_id = "loading"; 
+var progress_id = "loading"; $("#JenToStationLink").empty();
 function SetProgress(progress) { 
 if (progress) { 
 $("#" + progress_id + " > div").css("width", String(progress) + "%");
@@ -283,7 +283,7 @@ function doProgress() {
             return; 
         } 
         if (processBarCounter <= 100) { 
-            setTimeout("doProgress()", 1100); 
+            setTimeout("doProgress()", 1600); 
             SetProgress(processBarCounter); 
             processBarCounter++; 
         }

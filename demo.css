@@ -71,7 +71,7 @@ body{
    height: 27%;
    text-align: center;
    width: 90%;
-   font-size: 14p
+   font-size: 14px;
    border: solid;
    border-width: 4px;
    border-color: darkred;
@@ -141,7 +141,7 @@ div.Ami {
     z-index:4;   
     font-size:24px;  
     color: mediumblue;
-    background-color: white;
+    background-color: gainsboro;
     overflow:hidden;
 }  
 
