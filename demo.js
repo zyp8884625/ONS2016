@@ -43,13 +43,13 @@ function processCommand() {
                 JenToTestStation(commandList[i]);
         }
         if (commandList[i].search("TestStation") >= 0){
-            if(!stationStart){
+            if(i >= commandList.length - 1){
                 $(".testStationImg").fadeOut("slow");
                 $(".testStationImg").fadeIn("slow");
-                $("#JenToStationLink").empty();
-                JenToTestStation(commandList[i]);
                 stationStart = true;
             }
+            $("#JenToStationLink").empty();
+            JenToTestStation(commandList[i]);
         }
         if (commandList[i].search("Clean up test environment") >= 0) {
             if (i >= commandList.length - 1) {
