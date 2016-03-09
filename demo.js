@@ -53,6 +53,7 @@ function processCommand() {
         }
         if (commandList[i].search("Clean up test environment") >= 0) {
             if (i >= commandList.length - 1) {
+                $("#JenToStationLink").empty();
                 $("#StationToMiniLink").empty();
                 $("#StationToCluster").empty();
                 $("#JenToWiki").empty();
@@ -61,9 +62,12 @@ function processCommand() {
                 $(".node1imgs").attr("src","onos-logo-gray.png");
                 $(".node2imgs").attr("src","onos-logo-gray.png");
                 $(".node3imgs").attr("src","onos-logo-gray.png");
-            }
+                cleanUp(commandList[i])
+            }else{
                 $("#JenToStationLink").empty();
-                JenToTestStation(commandList[i])
+            }
+               
+                
             
         }
         
@@ -211,6 +215,49 @@ function state_Change(){
     }
 }
 
+
+var processBar = document.createElement('div');
+    var center = document.createElement('div');
+    var loading = document.createElement('div');
+    var insideLoading = document.createElement('div');
+    
+    processBar.id = "processBar";
+    center.id="center";
+    loading.id="loading";
+var cleanUpbool = false;
+function cleanUp( command){
+    var sY = getElemPos(document.getElementsByClassName("JenImg")[0]).y + $(".JenImg").height();
+    var sX = getElemPos(document.getElementsByClassName("JenImg")[0]).x + $(".JenImg").width()/2;
+    var eY = getElemPos(document.getElementsByClassName("testStationImg")[0]).y;
+    var eX = getElemPos(document.getElementsByClassName("testStationImg")[0]).x + $(".testStationImg").width()/2 + 2;
+    line(sX,sY,eX,eY,document.getElementById('JenToStationLink'))
+
+    var node = document.createElement('div');  
+    node.className = 'Ami';
+    node.style.marginTop = sY;
+    node.style.marginLeft = sX;
+    command = command.substring(5);
+    
+    
+    
+    loading.innerHTML = command;
+    loading.appendChild(insideLoading);
+    
+    center.appendChild(loading)
+    processBar.appendChild(center);
+    node.appendChild(processBar);
+    
+    document.getElementById('JenToStationLink').appendChild(node);
+    $(".Ami").animate({marginLeft:eX, marginTop:eY},3000)
+    
+    if(!cleanUpbool){
+        doProgress(); 
+        cleanUpbool = true;
+    }
+    
+
+}
+
 function transport(startX, startY, endX, endY, command, container) {
 
     var node = document.createElement('div');  
@@ -220,9 +267,29 @@ function transport(startX, startY, endX, endY, command, container) {
     command = command.substring(5);
     node.innerHTML = command;
     container.appendChild(node);
-    
     $(".Ami").animate({marginLeft:endX, marginTop:endY},3000)
-}
+ }
+
+var progress_id = "loading"; 
+function SetProgress(progress) { 
+if (progress) { 
+$("#" + progress_id + " > div").css("width", String(progress) + "%");
+} 
+} 
+var processBarCounter = 0; 
+
+function doProgress() { 
+        if (processBarCounter > 100) { 
+            return; 
+        } 
+        if (processBarCounter <= 100) { 
+            setTimeout("doProgress()", 1100); 
+            SetProgress(processBarCounter); 
+            processBarCounter++; 
+        }
+} 
+
+
 
 function JenToTestStation(command) {
     var sY = getElemPos(document.getElementsByClassName("JenImg")[0]).y + $(".JenImg").height();
@@ -359,4 +426,5 @@ function initialization(){
     $("node3imgs").attr("src","nons-logo-gray.png");
     $(".TopoImg").attr("src", "topo-gray.png")
     commandList = []
+    cleanUpbool=false
 }
