@@ -38,9 +38,6 @@ function processCommand() {
             if(i >= commandList.length-1){
                 $(".JenImg").fadeOut("slow");
                 $(".JenImg").fadeIn("slow");
-                cleanUpbool=false;
-                processBarCounter=0;
-                clearTimeout(progressTimmer)
             }
                 $("#JenToStationLink").empty();
                 JenToTestStation(commandList[i]);
@@ -192,6 +189,9 @@ function processCommand() {
                 }
                 $("#JenToWiki").empty();
                 JenToWiki(commandList[i]);
+                cleanUpbool=false;
+                processBarCounter=0;
+                clearTimeout(progressTimmer)
             }
     }
 }
