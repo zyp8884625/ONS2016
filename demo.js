@@ -63,8 +63,8 @@ function processCommand() {
                 $(".node2imgs").attr("src","onos-logo-gray.png");
                 $(".node3imgs").attr("src","onos-logo-gray.png");
             }
-                cleanUp(commandList[i])
                 $("#JenToStationLink").empty();
+                cleanUp(commandList[i]) 
         }
         
         if (commandList[i].search("ONOS1:") >= 0 && !node1Closed){
