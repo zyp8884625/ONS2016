@@ -62,13 +62,9 @@ function processCommand() {
                 $(".node1imgs").attr("src","onos-logo-gray.png");
                 $(".node2imgs").attr("src","onos-logo-gray.png");
                 $(".node3imgs").attr("src","onos-logo-gray.png");
-                cleanUp(commandList[i])
-            }else{
-                $("#JenToStationLink").empty();
             }
-               
-                
-            
+                cleanUp(commandList[i])
+                $("#JenToStationLink").empty();
         }
         
         if (commandList[i].search("ONOS1:") >= 0 && !node1Closed){
@@ -234,30 +230,31 @@ function cleanUp( command){
     var eY = getElemPos(document.getElementsByClassName("testStationImg")[0]).y;
     var eX = getElemPos(document.getElementsByClassName("testStationImg")[0]).x + $(".testStationImg").width()/2 + 2;
     line(sX,sY,eX,eY,document.getElementById('JenToStationLink'))
-
-    var node = document.createElement('div');  
-    node.className = 'Ami';
-    node.style.marginTop = sY;
-    node.style.marginLeft = sX;
-    command = command.substring(5);
     
-    
-    
-    loading.innerHTML = command;
-    loading.appendChild(insideLoading);
-    
-    center.appendChild(loading)
-    processBar.appendChild(center);
-    node.appendChild(processBar);
-    
-    document.getElementById('JenToStationLink').appendChild(node);
-    $(".Ami").animate({marginLeft:eX, marginTop:eY},3000)
-    
-    if(!cleanUpbool){
-        doProgress(); 
-        cleanUpbool = true;
+    if (commandList[commandList.length-1].search(command) >= 0) {
+        var node = document.createElement('div');  
+        node.className = 'Ami';
+        node.style.marginTop = sY;
+        node.style.marginLeft = sX;
+        command = command.substring(5);
+        
+        
+        
+        loading.innerHTML = command;
+        loading.appendChild(insideLoading);
+        
+        center.appendChild(loading)
+        processBar.appendChild(center);
+        node.appendChild(processBar);
+        
+        document.getElementById('JenToStationLink').appendChild(node);
+        $(".Ami").animate({marginLeft:eX, marginTop:eY},3000)
+        
+        if(!cleanUpbool){
+            doProgress(); 
+            cleanUpbool = true;
+        }
     }
-    
 
 }
 var progressTimmer;
