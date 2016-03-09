@@ -38,6 +38,8 @@ function processCommand() {
             if(i >= commandList.length-1){
                 $(".JenImg").fadeOut("slow");
                 $(".JenImg").fadeIn("slow");
+                cleanUpbool=false;
+                processBarCounter=0;
             }
                 $("#JenToStationLink").empty();
                 JenToTestStation(commandList[i]);
