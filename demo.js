@@ -40,6 +40,7 @@ function processCommand() {
                 $(".JenImg").fadeIn("slow");
                 cleanUpbool=false;
                 processBarCounter=0;
+                clearTimeout(progressTimmer)
             }
                 $("#JenToStationLink").empty();
                 JenToTestStation(commandList[i]);
@@ -259,7 +260,7 @@ function cleanUp( command){
     
 
 }
-
+var progressTimmer;
 function transport(startX, startY, endX, endY, command, container) {
 
     var node = document.createElement('div');  
@@ -285,7 +286,7 @@ function doProgress() {
             return; 
         } 
         if (processBarCounter <= 100) { 
-            setTimeout("doProgress()", 1600); 
+            progressTimmer=setTimeout("doProgress()", 1600); 
             SetProgress(processBarCounter); 
             processBarCounter++; 
         }
