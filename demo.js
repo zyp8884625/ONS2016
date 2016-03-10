@@ -207,6 +207,10 @@ function state_Change(){
                 clearTimeout(timmer);
                 return;
             }
+            if (commandList.length>0 && commandList[commandList.length-1].search("End Test") >= 0) {
+                $(".Ami").remove()
+                return;
+            }
             processCommand();
         }else{
             $("#testTittle").html("<h1>No Test Running</h1>")
