@@ -272,6 +272,7 @@ function transport(startX, startY, endX, endY, command, container) {
     node.style.marginTop = startY;
     node.style.marginLeft = startX;
     command = command.substring(5);
+    node.style.opacity="0";
     node.innerHTML = command;
     container.appendChild(node);
     $(".Ami").animate({marginLeft:endX, marginTop:endY},3000);
