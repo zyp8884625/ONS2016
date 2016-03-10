@@ -7,6 +7,10 @@ var node3Closed = false;
 var MiniNetClosed = false;
 var commandList = []
 var timmer;
+var cleanUpbool = false;
+var progressTimmer;
+var processBarCounter = 0; 
+var progress_id = "loading";
 function loadXMLDoc(url){
     xmlhttp=null;
     if (window.XMLHttpRequest){// code for Firefox, Opera, IE7, etc.
@@ -227,7 +231,7 @@ var processBar = document.createElement('div');
     processBar.id = "processBar";
     center.id="center";
     loading.id="loading";
-var cleanUpbool = false;
+
 function cleanUp( command){
     var sY = getElemPos(document.getElementsByClassName("JenImg")[0]).y + $(".JenImg").height();
     var sX = getElemPos(document.getElementsByClassName("JenImg")[0]).x + $(".JenImg").width()/2;
@@ -261,7 +265,6 @@ function cleanUp( command){
     }
 
 }
-var progressTimmer;
 function transport(startX, startY, endX, endY, command, container) {
 
     var node = document.createElement('div');  
@@ -271,16 +274,14 @@ function transport(startX, startY, endX, endY, command, container) {
     command = command.substring(5);
     node.innerHTML = command;
     container.appendChild(node);
-    $(".Ami").animate({marginLeft:endX, marginTop:endY},3000)
+    $(".Ami").animate({marginLeft:endX, marginTop:endY},3000);
  }
 
-var progress_id = "loading"; $("#JenToStationLink").empty();
 function SetProgress(progress) { 
-if (progress) { 
-$("#" + progress_id + " > div").css("width", String(progress) + "%");
+    if (progress) { 
+        $("#" + progress_id + " > div").css("width", String(progress) + "%");
+    } 
 } 
-} 
-var processBarCounter = 0; 
 
 function doProgress() { 
         if (processBarCounter > 100) { 
@@ -292,8 +293,6 @@ function doProgress() {
             processBarCounter++; 
         }
 } 
-
-
 
 function JenToTestStation(command) {
     var sY = getElemPos(document.getElementsByClassName("JenImg")[0]).y + $(".JenImg").height();
