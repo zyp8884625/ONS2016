@@ -71,6 +71,22 @@ function processCommand() {
                 cleanUp(commandList[i]) 
         }
         
+         if (commandList[i].search("Cleaning up test environment") >= 0) {
+            if (i >= commandList.length - 1) {
+                $("#JenToStationLink").empty();
+                $("#StationToMiniLink").empty();
+                $("#StationToCluster").empty();
+                $("#JenToWiki").empty();
+                $(".MiniNetImg").attr("src","MiniNet-gray.png");
+                $(".TopoImg").attr("src", "topo-gray.png")
+                $(".node1imgs").attr("src","onos-logo-gray.png");
+                $(".node2imgs").attr("src","onos-logo-gray.png");
+                $(".node3imgs").attr("src","onos-logo-gray.png");
+            }
+                $("#JenToStationLink").empty();
+                JenToTestStation(commandList[i]) 
+        }
+        
         if (commandList[i].search("ONOS1:") >= 0 && !node1Closed){
                 if(i >= commandList.length-1){
                     $(".node1imgs").fadeOut("slow");
