@@ -229,6 +229,15 @@ function state_Change(){
             }
             if (commandList.length>0 && commandList[commandList.length-1].search("End Test") >= 0) {
                 $(".Ami").remove()
+                $(".MiniNetImg").attr("src","MiniNet-gray.png");
+                $("node1imgs").attr("src","nons-logo-gray.png");
+                $("node2imgs").attr("src","nons-logo-gray.png");
+                $("node3imgs").attr("src","nons-logo-gray.png");
+                $(".TopoImg").attr("src", "topo-gray.png")
+                $("#StationToMiniLink").empty();
+                $("#StationToCluster").empty();
+                $("#JenToGerrit").empty();
+                $("#JenToWiki").empty();
                 return;
             }
             processCommand();
