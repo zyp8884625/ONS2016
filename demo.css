@@ -143,6 +143,7 @@ div.Ami {
     color: mediumblue;
     background-color: gainsboro;
     overflow:hidden;
+    white-space: nowrap;
 }  
 
 #lines{

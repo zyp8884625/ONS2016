@@ -287,8 +287,9 @@ function transport(startX, startY, endX, endY, command, container) {
     node.className = 'Ami';
     node.style.marginTop = startY;
     node.style.marginLeft = startX;
+    node.style.whiteSpace= "nowarp";
     command = command.substring(5);
-    node.innerHTML = command;
+    node.innerHTML = "<p>" + command+"</p>";
     container.appendChild(node);
     $(".Ami").animate({marginLeft:endX, marginTop:endY},3000);
  }
