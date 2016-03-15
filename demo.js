@@ -289,7 +289,7 @@ function transport(startX, startY, endX, endY, command, container) {
     node.style.marginLeft = startX;
     node.style.whiteSpace= "nowarp";
     command = command.substring(5);
-    node.innerHTML = "<p>" + command+"</p>";
+    node.innerHTML = "<p style='margin:0px;'>" + command+"</p>";
     container.appendChild(node);
     $(".Ami").animate({marginLeft:endX, marginTop:endY},3000);
  }
